@@ -14,6 +14,7 @@ rm -f ${tmpfile}
 
 
 echo -e "Preparing file\n\n"
+echo -e "var boolean reloadOnce = true\n\n" >> ${tmpfile}
 echo "rule 'init_values'" >> ${tmpfile}
 echo "when" >> ${tmpfile}
 
@@ -84,6 +85,8 @@ for filename in *.items; do
 
 done
 
+
+echo -e "\n\treloadOnce = false" >> ${tmpfile}
 echo "end" >> ${tmpfile}
 
 
